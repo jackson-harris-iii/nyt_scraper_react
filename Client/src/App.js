@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Card, CardTitle, CardText, Paper } from 'react-md';
 import { NavigationDrawer } from 'react-md';
+import SearchBox from "./componenets/SearchBox"
 
 const style = { maxWidth: 320 };
 
@@ -22,18 +23,7 @@ class App extends Component {
 						</header>
 					</div>
 			  </Paper>
-        <Paper zDepth={5}>
-          <Card style={style} className="md-block-centered">
-          <Paper zDepth={3}>
-            <CardTitle title="Using CardTitle" subtitle="With CardText" />
-            <CardText>
-              <p>
-                The <code>CardText</code> component is really just useful for displaying any content with some additional padding.
-              </p>
-            </CardText>
-          </Paper>  
-          </Card>
-        </Paper>  
+          <SearchBox />  
       </NavigationDrawer>
 			</div>;    
   }
