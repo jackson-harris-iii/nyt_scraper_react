@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardTitle, TextField, DatePicker } from 'react-md';
+import { Card, CardTitle, TextField, DatePicker, Button } from 'react-md';
 import ComponentWrapper from "../ComponentWrapper"
 
 const style = { maxWidth: 500 };
 
 function SearchBox(props) {
-
     return (
         <ComponentWrapper>
-            <Card
+            <Card 
                 style={style}
                 className="md-block-centered"
             >
@@ -41,6 +40,12 @@ function SearchBox(props) {
                             displayMode="portrait"
                         />
                     </div>
+                </div>
+                <div>
+                    <Button
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                    raised primary>
+                    Search</Button>
                 </div>
             </Card>    
         </ComponentWrapper>
