@@ -12,7 +12,7 @@ function SearchBox(props) {
                 style={style}
                 className="md-block-centered"
             >
-                <CardTitle title="Search" subtitle="Articles Directly from the New York" />
+                <CardTitle title="Search" subtitle="Articles Directly from the New York Times" />
                 <div ClassName="md-grid">
                     <div ClassName="md-cell">
                         <TextField

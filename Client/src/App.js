@@ -5,6 +5,9 @@ import './App.css';
 import { Card, CardTitle, CardText, Paper } from 'react-md';
 import { NavigationDrawer } from 'react-md';
 import SearchBox from "./componenets/SearchBox"
+import ResultsBox from "./componenets/ResultsBox"
+import Articles from "./test.json"
+import API from "./utils/API"
 
 const style = { maxWidth: 320 };
 
@@ -12,9 +15,9 @@ const style = { maxWidth: 320 };
 class App extends Component {
 
   state = {
-    searchMade: false   
+    searchMade: false,
+    Articles   
   }
-
   
 
   render() {
@@ -33,6 +36,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={SearchBox} />
+            <Route exact path="/show" render={() => <ResultsBox articles={this.state.Articles} />} />
+            <Route exact path="/articles/:search" component={ResultsBox} />
           </Switch>  
         </Router>  
       </NavigationDrawer> 
