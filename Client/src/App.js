@@ -8,6 +8,7 @@ import SearchBox from "./componenets/SearchBox"
 import ResultsBox from "./componenets/ResultsBox"
 import Articles from "./test.json"
 import API from "./utils/API"
+import HomePage from './componenets/HomePage/HomePage';
 
 const style = { maxWidth: 320 };
 
@@ -18,24 +19,26 @@ class App extends Component {
     searchMade: false,
     Articles   
   }
+
+
   
 
   render() {
     return <div className="App">
 				<NavigationDrawer drawerTitle="Extras" toolbarTitle="Welcome to NY TIMES SEARCH">
         <Paper zDepth={0}>
-        	<div className="App"
-               zDepth={3}
-               >
-            {/* <header className="App-header">
-							<img src={logo} className="App-logo" alt="logo" />
-							<h1 className="App-title">Powered by React</h1>
-						</header> */}
-					</div>
-			  </Paper>
+          <div className="App"
+            zDepth={3}
+          >
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h1 className="App-title">Powered by React</h1>
+            </header>
+          </div>
+        </Paper>
         <Router>
           <Switch>
-            <Route exact path="/" component={SearchBox} />
+            <Route exact path="/" component={HomePage} />
             <Route exact path="/show" render={() => <ResultsBox articles={this.state.Articles} />} />
             <Route exact path="/articles/:search" component={ResultsBox} />
           </Switch>  

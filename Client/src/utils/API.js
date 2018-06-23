@@ -3,11 +3,15 @@ import axios from "axios";
 export default {
     
     search: (query) => {
-        return axios.post("/api/search", query)
+        return axios.post("/api/articles", query)
     },
 
     savedArticles: () => {
-        return axios.get("/api/saved")
+        return axios.get("/api/articles")
+    },
+
+    getArticle: (id) => {
+        return axios.get("/api/articles" + id)
     },
 
     saveArticle: (data) => {

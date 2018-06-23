@@ -10,16 +10,19 @@ mongoose.connect(
 
 const articleSeed = [
 	{
-		title: 'first article',
+        title: 'first article',
+        url: 'https://www.nytimes.com/2017/10/08/us/mcdonalds-szechuan-sauce.html',
 		notes: 'this is the first article',
 		date: new Date(Date.now()),
 	},
 	{
-		title: 'second article',
+        title: 'second article',
+        url:'https://www.nytimes.com/2018/05/17/arts/television/rick-and-morty.html',
 		date: new Date(Date.now()),
 	},
 	{
         title: 'third article',
+        url:'https://www.nytimes.com/2018/05/10/arts/television/rick-and-morty-70-new-episodes.html',
         notes: 'this is the third article',
 		date: new Date(Date.now()),
 	},
