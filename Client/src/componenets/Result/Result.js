@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Card, CardTitle, Button } from 'react-md';
-import ComponentWrapper from "../ComponentWrapper"
 
 const style = { maxWidth: 500 };
 

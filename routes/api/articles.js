@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const articlesController = require("../../controllers/articlesController");
+const articlesController = require("../../controllers/ArticlesController");
 
 // Matches with "/api/articles"
 router
@@ -13,5 +13,6 @@ router
     .get(articlesController.findById)
     .put(articlesController.update)
     .delete(articlesController.remove);
+    
 
 module.exports = router;
