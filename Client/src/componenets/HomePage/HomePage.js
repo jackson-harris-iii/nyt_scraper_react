@@ -15,6 +15,9 @@ class HomePage extends Component {
     state = {
         savedArticles: [],
         searchResults: [],
+        topic: '',
+        startYear: '',
+        endYear: '',
     };
     
     componentDidMount() {
@@ -26,11 +29,14 @@ class HomePage extends Component {
             .then( res => this.setState({ savedArticles: res.data }));
     }
 
-    handleFormSubmit = () => {
+    handleFormSubmit = (event) => {
         event.preventDefault();
         
         API.search(this.state.topic, this.state.startYear, this.state.endYear)
-            .then( res => this.setState({ searchResults: res.data }) )
+            .then( (res) => {
+                console.log(res)
+                this.setState({ searchResults: res.data })
+            })
     }
 
     handleTopicChange = (event) => {
@@ -49,7 +55,12 @@ class HomePage extends Component {
 		return (
 			<div>
                 <ComponentWrapper>    
-                    <SearchBox />
+                    <SearchBox
+                        handleTopicChange={this.handleTopicChange}
+                        handleStartYearChange={this.handleStartYearChange}
+                        handleEndYearChange={this.handleEndYearChange}
+                        handleFormSubmit={this.handleFormSubmit}
+                     />
                     <ResultsBox articles={this.state.searchResults} />
                     <SavedBox articles={this.state.savedArticles} />
                 </ComponentWrapper>    

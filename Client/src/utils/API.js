@@ -4,11 +4,21 @@ export default {
     
     search: (topic, startYear, endYear) => {
         
-        const authKey = "cfb9f6bf533b46d0a9d4edf5059f55b9";
-        const queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
-            authKey + "&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
+        let start = startYear + '0101'
+        let end = endYear + '1231'
 
-        return axios.get(queryURL);        
+        const APIKey = 'a40f23044cf64b46910f826529964571';
+
+        return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", {
+            params: {
+                'api-key': APIKey,
+                'q': topic,
+                'begin-date': start,
+                'end-date': end
+            }
+        }).then( res => {
+            return res.data.response
+        })       
     },
 
     savedArticles: () => {
