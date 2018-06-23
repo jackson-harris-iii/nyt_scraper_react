@@ -29,6 +29,19 @@ class HomePage extends Component {
             .then( res => this.setState({ savedArticles: res.data }));
     }
 
+    saveArticle = (id) => {
+        console.log(id)
+        
+        const foundArticleByID = this.state.searchResults.find( (article) => article._id === id )
+        console.log(foundArticleByID)
+
+        API.saveArticle(foundArticleByID)
+            .then( (res) => {
+                console.log(res)
+                this.getSavedArticles()
+            })
+    }
+
     handleFormSubmit = (event) => {
         event.preventDefault();
         
@@ -61,7 +74,9 @@ class HomePage extends Component {
                         handleEndYearChange={this.handleEndYearChange}
                         handleFormSubmit={this.handleFormSubmit}
                      />
-                    <ResultsBox articles={this.state.searchResults} />
+                    <ResultsBox articles={this.state.searchResults}
+                                saveArticle={this.saveArticle}
+                     />
                     <SavedBox articles={this.state.savedArticles} />
                 </ComponentWrapper>    
 			</div>
