@@ -17,21 +17,8 @@ class App extends Component {
 
   state = {
     searchMade: false,
-    savedArticles: [],
     
   }
-
-componentDidMount() {
-  this.getSavedArticles()
-}
-
-getSavedArticles = () => {
-  API.savedArticles()
-    .then((res) => {
-      this.setState({ saved: res.data });
-    });
-}
-  
 
   render() {
     return <div className="App">
@@ -48,7 +35,7 @@ getSavedArticles = () => {
         </Paper>
         <Router>
           <Switch>
-            <Route exact path="/" component={() => <HomePage SavedArticles={this.state.savedArticles} />} />
+            <Route exact path="/" component={HomePage} />
             <Route exact path="/show" render={() => <ResultsBox articles={this.state.Articles} />} />
             <Route exact path="/articles/:search" component={ResultsBox} />
           </Switch>  

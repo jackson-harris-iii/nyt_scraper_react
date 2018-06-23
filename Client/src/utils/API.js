@@ -24,7 +24,7 @@ export default {
     },
 
     removeArticle: (id) => {
-        return axios.delete("/api/saved" + id)
+        return axios.delete("/api/articles" + id)
     }
 
 };

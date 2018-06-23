@@ -11,8 +11,12 @@ function SavedBox(props) {
 	return (
 		<ComponentWrapper>
 			<Card style={style} className="md-block-centered">
-				<CardTitle title="Results" subtitle="Articles Directly from the New York" />
-				{articles.map((article) => <SavedArticle title={article.title} />)}
+				<CardTitle title="Saved Articles" subtitle="Articles Directly from the New York" />
+				{articles.map((article) => 
+					<SavedArticle 
+						title={article.title} 
+						id={article._id} 
+						/>)}
 			</Card>
 		</ComponentWrapper>
 	);

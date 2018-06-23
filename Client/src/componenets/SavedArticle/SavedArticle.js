@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 
 const style = { maxWidth: 500 };
 
-function Result(props) {
+function SavedArticle(props) {
     return <Card style={style} className="md-block-centered">
-        <Link to={"/articles/" + props.article._id}>
+        <Link to={"/articles/" + props._id}>
             <CardTitle title={props.title} />
         </Link>    
-        <Button onClick={() => this.removeArticle(props.article._id)} raised primary>
+        <Button onClick={() => this.removeArticle(props._id)} raised primary>
             Delete
-						</Button>
+		</Button>
     </Card>
 }
 
-export default (Result);
+export default (SavedArticle);
