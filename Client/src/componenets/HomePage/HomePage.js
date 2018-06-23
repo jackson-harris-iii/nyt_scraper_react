@@ -35,7 +35,7 @@ class HomePage extends Component {
         API.search(this.state.topic, this.state.startYear, this.state.endYear)
             .then( (res) => {
                 console.log(res)
-                this.setState({ searchResults: res.data })
+                this.setState({ searchResults: res.docs })
             })
     }
 

@@ -10,7 +10,7 @@ function ResultsBox(props) {
     const articles = props.articles
     return 	<Card style={style} className="md-block-centered">
 					<CardTitle title="Results"/>				
-					{articles.map((article) => <Result title={article.title} />)}
+					{articles.map((article) => <Result title={article.headline.main} url={article.web_url} />)}
 				</Card>
 }
 
