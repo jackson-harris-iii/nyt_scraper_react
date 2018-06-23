@@ -4,14 +4,14 @@ import { Card, CardTitle, Button } from 'react-md';
 import ComponentWrapper from '../ComponentWrapper';
 import SavedArticle from "../SavedArticle"
 
-const style = { maxWidth: 500 };
+const style = { maxWidth: 2000 };
 
 function SavedBox(props) {
 	const articles = props.articles;
 	return (
 		<ComponentWrapper>
 			<Card style={style} className="md-block-centered">
-				<CardTitle title="Saved Articles" subtitle="Articles Directly from the New York" />
+				<CardTitle title="Saved Articles" subtitle="Stored w/MongoDB" />
 				{articles.map((article) => 
 					<SavedArticle 
 						title={article.title} 

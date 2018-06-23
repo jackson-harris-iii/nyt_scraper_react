@@ -7,7 +7,6 @@ const style = { maxWidth: 500 };
 
 function SearchBox(props) {
     return (
-        <ComponentWrapper>
             <Card 
                 style={style}
                 className="md-block-centered"
@@ -48,7 +47,6 @@ function SearchBox(props) {
                     Search</Button>
                 </div>
             </Card>    
-        </ComponentWrapper>
     );
 }
 
